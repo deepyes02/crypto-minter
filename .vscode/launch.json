@@ -4,10 +4,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Token.js via Hardhat library",
-      "program": "${workspaceFolder}/node_modules/.bin/hardhat",
-      "args": ["test", "test/Token.js"],
+      "name": "Debug Token.js",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/mocha",
+      "args": ["${workspaceFolder}/test/Token.js"],
       "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/**/*.js"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     }
