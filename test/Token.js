@@ -18,9 +18,7 @@ describe("Token contract", () => {
     const token = await ethers.deployContract("Token");
     const myBalance = await token.balanceOf(me.address);
     const totalSupply = await token.totalSupply();
-
     const balances = await getBalanceOfAllAccounts(signers, token);
-
     expect(totalSupply).to.equal(myBalance);
     console.log(balances);
   });

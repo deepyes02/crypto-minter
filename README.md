@@ -33,3 +33,41 @@ npx hardhat run scripts/deploy.js --network localhost
 ## Hard hat is now deployed. ##
 
 Next, learning how to interact with it. 
+
+
+## Project Structure
+
+* `contracts/`: Contains the Solidity smart contract `Token.sol`.
+* `scripts/`: Contains the deployment script `deploy.js`.
+* `test/`: Contains test files for the smart contract.
+* `hardhat.config.js`: Hardhat configuration file.
+
+## Token.sol Functionality
+
+The `Token.sol` contract implements a simple ERC-20 token with features like token transfer, balance checking, and total supply.
+
+## Testing
+
+The project includes unit tests using Mocha and Chai to verify the contract's functionality. Key test cases include:
+
+* Verifying the initial total supply.
+* Checking token balances after transfers.
+* Testing for correct event emissions.
+
+## Interaction
+
+To interact with the deployed contract, you can use Ether.js. For example, to get the token balance of an address:
+
+```javascript
+// Example using Ether.js (within a Node.js script)
+const { ethers } = require("ethers");
+const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // Replace with your deployed contract address
+const provider = new ethers.providers.JsonRpcProvider("[http://127.0.0.1:8545/](https://www.google.com/search?q=http://127.0.0.1:8545/)"); // Local Hardhat node
+const token = new ethers.Contract(contractAddress, ["function balanceOf(address) view returns (uint256)"], provider);
+
+async function getBalance(address) {
+  const balance = await token.balanceOf(address);
+  console.log(`Balance of ${address}: ${ethers.utils.formatEther(balance)}`);
+}
+
+getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"); // Example address◊
