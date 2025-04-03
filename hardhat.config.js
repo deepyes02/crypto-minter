@@ -9,6 +9,9 @@ module.exports = {
         count: 5, // Limit to 5 accounts
         accountsBalance: "100000000000000000000" // 100 ETH in wei
       }
+    },
+    localhost: {
+      url: "http://127.0.0.1:8545",
     }
   }
 };
