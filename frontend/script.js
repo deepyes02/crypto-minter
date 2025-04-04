@@ -17,6 +17,31 @@ const contractAddress = contractData.address;
 const contractABI = contractData.abi;
 const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
 const contract = new ethers.Contract(contractAddress, contractABI, provider);
+const users = document.getElementById("users");
+
+async function getBalanceOfUser(user) {
+  const balance = await contract.balanceOf(user);
+  return balance;
+}
+
+
+async function displayUsers(){
+  const signers = await provider.listAccounts();
+
+  signers.forEach(user => {
+   
+    const div = document.createElement("div");
+    const span = document.createElement("span"); 
+    
+    getBalanceOfUser(user.address).then(balance => {
+      span.innerText = `Balance: ${ethers.formatUnits(balance, 0)}`;
+    });
+    
+    div.innerHTML = `<p>${user.address}</p>`;
+    div.appendChild(span);
+    users.appendChild(div);
+  });
+}
 
 async function displayContractInfo() {
   try {
@@ -29,9 +54,11 @@ async function displayContractInfo() {
   }
 }
 
+
 async function transferTokens() {
   try {
     const signer = await provider.getSigner();
+
     console.log(signer);
     const contractWithSigner = await contract.connect(signer);
     const recipientAddress = "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65"; // Replace with recipient address
@@ -46,6 +73,7 @@ async function transferTokens() {
   }
 }
 
+displayUsers();
 displayContractInfo();
 
 document.getElementById("transferButton").addEventListener("click", transferTokens);
