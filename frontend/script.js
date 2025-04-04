@@ -28,19 +28,17 @@ async function getBalanceOfUser(user) {
 async function displayUsers(){
   const signers = await provider.listAccounts();
 
-  signers.forEach(user => {
-   
+  for (const user of signers) {
     const div = document.createElement("div");
     const span = document.createElement("span"); 
-    
-    getBalanceOfUser(user.address).then(balance => {
-      span.innerText = `Balance: ${ethers.formatUnits(balance, 0)}`;
-    });
-    
+
+    const balance = await getBalanceOfUser(user.address);
+    span.innerText = `Balance: ${ethers.formatUnits(balance, 0)}`;
+
     div.innerHTML = `<p>${user.address}</p>`;
     div.appendChild(span);
     users.appendChild(div);
-  });
+  }
 }
 
 async function displayContractInfo() {
@@ -66,6 +64,7 @@ async function transferTokens() {
     const transaction = await contractWithSigner.transfer(recipientAddress, amount);
     await transaction.wait(); // Wait for the transaction to be mined
     console.log("Tokens transferred!");
+    alert('token transferred successfully');
     displayContractInfo(); // Update UI after transfer
   } catch (error) {
     console.error("Transfer failed:", error);
