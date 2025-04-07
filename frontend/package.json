@@ -1,0 +1,52 @@
+{
+  "name": "blockchain-frontend",
+  "description": "Frontend for the blockchain project",
+  "version": "5.6.5",
+  "private": true,
+  "author": {
+    "name": "Deepesh Dhakal",
+    "email": "deepeshdhkl@gmail.com"
+  },
+  "scripts": {
+    "clean": "rm -rf dist/* && echo '🗑️ cleaning build folder'",
+    "dev": "webpack serve --mode=development",
+    "build": "npm run clean && webpack --mode production --no-devtool && echo \"🤛building webpack\" && echo \"✅ done\""
+  },
+  "dependencies": {
+    "ethers": "^6.13.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.22.5",
+    "@babel/preset-env": "7.22.5",
+    "@babel/preset-react": "7.22.5",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/cypress": "^0.1.6",
+    "@types/gsap": "^1.20.2",
+    "@types/node": "^20.10.8",
+    "@types/react": "^18.2.47",
+    "@types/react-dom": "^18.2.18",
+    "@types/webpack": "^5.28.5",
+    "autoprefixer": "^10.4.15",
+    "babel-loader": "9.1.2",
+    "chokidar-cli": "^3.0.0",
+    "css-loader": "^6.8.1",
+    "cypress": "^14.2.1",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss-loader": "^7.3.3",
+    "sass": "^1.86.3",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
