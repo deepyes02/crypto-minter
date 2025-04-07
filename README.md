@@ -83,3 +83,13 @@ getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"); // Example address◊
 Frontend is built with REACT
 1. In the frontend folder, run `npm run dev` to start the local server
 2. OR, `npm run build`
+
+
+
+## METAMASK ##
+
+Metamask suppport is added, however need to figure out : 
+1. Passing data properly, 
+2. connecting with local hardhat node (how it is happening, since we removed json rpc settings)
+3. What to do when user has metamask, but hasn't authenticated, instead of regular error of duplicate
+4. What to do after metamask is connected sucessfully
