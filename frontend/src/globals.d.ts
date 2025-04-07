@@ -61,17 +61,17 @@ declare module '*.svg' {
 }
 
 declare module '*.mp3' {
-	const value : string;
-	export default value;
+  const value: string;
+  export default value;
 }
 declare module '*.wav' {
-	const value : string;
-	export default value;
+  const value: string;
+  export default value;
 }
 
-declare global{
-	interface Window{
-		result : string,
-    smilesRaffle: any
-	}
+
+interface Window {
+  result: string,
+  smilesRaffle: any,
+  ethereum: any
 }

@@ -14,7 +14,7 @@ export default class App {
     }
     const root = createRoot(HTMLElement);
     root.render(
-      <React.StrictMode>
+      // <React.StrictMode>
         <ContractProvider>
           <HashRouter>
             <Routes>
@@ -23,7 +23,7 @@ export default class App {
             </Routes>
           </HashRouter>
         </ContractProvider>
-      </React.StrictMode>
+      // </React.StrictMode>
     )
   }
 }
