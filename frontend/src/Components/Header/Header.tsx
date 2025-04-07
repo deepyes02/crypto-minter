@@ -14,7 +14,7 @@ export default function Header() {
         </div>
         <div>
           <h3>Symbol: {data.contractJSON?.symbol}</h3>
-          <h3>Total Supply: {data.contractJSON?.totalSupply} {data.contractJSON?.symbol + 's'}</h3>
+          <h3>Total Supply: {(data.contractJSON?.totalSupply / 1000).toLocaleString()} {data.contractJSON?.symbol + 's'}</h3>
         </div>
       </header>
     </>

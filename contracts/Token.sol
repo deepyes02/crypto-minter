@@ -5,7 +5,8 @@ contract Token {
   string public name = "VEDANTA";
   string public symbol = "SRI";
   // fixed amount of tokens stored i an unsigned integer type variable
-  uint256 public totalSupply = 500;
+  uint8 public decimals = 3;
+  uint256 public totalSupply = 33_33_33_000 * 10 ** uint256(decimals);
 
   address public owner;
 
