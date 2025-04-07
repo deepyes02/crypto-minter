@@ -35,18 +35,18 @@ npx hardhat run scripts/deploy.js --network localhost
 Next, learning how to interact with it. 
 
 
-## Project Structure
+## Project Structure ##
 
 * `contracts/`: Contains the Solidity smart contract `Token.sol`.
 * `scripts/`: Contains the deployment script `deploy.js`.
 * `test/`: Contains test files for the smart contract.
 * `hardhat.config.js`: Hardhat configuration file.
 
-## Token.sol Functionality
+## Token.sol Functionality ##
 
 The `Token.sol` contract implements a simple ERC-20 token with features like token transfer, balance checking, and total supply.
 
-## Testing
+## Testing ##
 
 The project includes unit tests using Mocha and Chai to verify the contract's functionality. Key test cases include:
 
@@ -54,7 +54,7 @@ The project includes unit tests using Mocha and Chai to verify the contract's fu
 * Checking token balances after transfers.
 * Testing for correct event emissions.
 
-## Interaction
+## Interaction ##
 
 To interact with the deployed contract, you can use Ether.js. For example, to get the token balance of an address:
 
@@ -71,3 +71,15 @@ async function getBalance(address) {
 }
 
 getBalance("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"); // Example address◊
+```
+
+## FRONTEND ##
+**Dependencies**
+- React
+- React Router
+- Ether.js
+- Webpack for compiling and tooling
+
+Frontend is built with REACT
+1. In the frontend folder, run `npm run dev` to start the local server
+2. OR, `npm run build`
