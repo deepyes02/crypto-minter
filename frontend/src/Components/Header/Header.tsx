@@ -1,5 +1,6 @@
 import React from "react";
 import { useContract } from "../../services/contractProvider";
+import styles from "./Header.module.scss";
 
 
 export default function Header() {
@@ -11,16 +12,14 @@ export default function Header() {
 
   if (contract) {
     return <>
-      <header>
+      <header className={styles.header}>
         <h1>Blockchain</h1>
-      </header>
-      <main>
         <h3>{contract.contract?.address}</h3>
-      </main>
+      </header>
     </>
   } else {
     return <>
-    <h1>Sorry no contract found</h1>
+      <h1>Sorry no contract found</h1>
     </>
   }
 }
