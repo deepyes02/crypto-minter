@@ -4,9 +4,12 @@
 // }
 
 interface ContractContextType {
-  contract: {
+  contractJSON: {
     address: string,
     abi: any,
+    name: string,
+    symbol: string,
+    totalSupply: number,
   };
 }
 

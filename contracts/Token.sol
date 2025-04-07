@@ -2,8 +2,8 @@
 pragma solidity ^0.8.0;
 
 contract Token {
-  string public name = "My Hardhat Token";
-  string public symbol = "OUM";
+  string public name = "VEDANTA";
+  string public symbol = "SRI";
   // fixed amount of tokens stored i an unsigned integer type variable
   uint256 public totalSupply = 500;
 

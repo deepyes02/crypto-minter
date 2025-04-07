@@ -4,17 +4,18 @@ import styles from "./Header.module.scss";
 
 
 export default function Header() {
-  const contract = useContract();
-
-  React.useEffect(() => {
-    console.log('Header contract', contract);
-  }, [contract]);
-
-  if (contract) {
+  const data = useContract();
+  if (data) {
     return <>
       <header className={styles.header}>
-        <h1>Blockchain</h1>
-        <h3>{contract.contract?.address}</h3>
+        <div>
+          <h2>{data.contractJSON?.name} blockchain</h2>
+          <h3>{data.contractJSON?.address}</h3>
+        </div>
+        <div>
+          <h3>Symbol: {data.contractJSON?.symbol}</h3>
+          <h3>Total Supply: {data.contractJSON?.totalSupply} {data.contractJSON?.symbol + 's'}</h3>
+        </div>
       </header>
     </>
   } else {
