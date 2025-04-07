@@ -1,17 +1,12 @@
-import React from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 const HTMLElement: HTMLElement = document.getElementById('root') as HTMLDivElement;
-import style from './App.module.scss';
+import { HashRouter, Routes, Route } from 'react-router';
 import Header from './Components/Header/Header';
-import loadContract from './services/loadContract';
-
-
+import { ContractProvider } from './services/contractProvider';
 
 export default class App {
   contract: any;
-  constructor () {
-    this.contract = loadContract();
-  }
   init() {
     console.log('App initialized');
     if (!HTMLElement) {
@@ -20,9 +15,15 @@ export default class App {
     const root = createRoot(HTMLElement);
     root.render(
       <React.StrictMode>
-        <div className={style.universal}>
-          <Header loadContract={this.contract}/>
-        </div>
-      </React.StrictMode>)
+        <ContractProvider>
+          <HashRouter>
+            <Routes>
+              <Route path="" element={<Header />} />
+              <Route path="about" element={<h1>About</h1>} />
+            </Routes>
+          </HashRouter>
+        </ContractProvider>
+      </React.StrictMode>
+    )
   }
 }

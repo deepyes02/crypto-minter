@@ -3,6 +3,13 @@
 // 	raffle_nonce : string
 // }
 
+interface ContractContextType {
+  contract: {
+    address: string,
+    abi: any,
+  };
+}
+
 // custom.d.ts
 
 declare module '*.sass' {
