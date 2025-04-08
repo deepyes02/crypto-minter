@@ -1,11 +1,9 @@
-// const { expect } = require("chai");
-// const { ethers } = require("hardhat");
 import { HardhatEthersSigner } from "@nomicfoundation/hardhat-ethers/signers";
+import { Token } from "../typechain-types";
 import {expect} from "chai";
-import { Contract } from "ethers";
 import {ethers} from "hardhat";
 
-async function getBalanceOfAllAccounts(signers: HardhatEthersSigner[], token:Contract) {
+async function getBalanceOfAllAccounts(signers: HardhatEthersSigner[], token:Token) {
   const balances = [];
   for (const account of signers) {
     const balance = await token.balanceOf(account.address);
