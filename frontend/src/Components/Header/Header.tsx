@@ -5,12 +5,11 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   const data = useContract();
-  // console.log(data)
   if (data) {
     return <>
       <header className={styles.header}>
         <div>
-          <h2>{data.contractJSON?.name} blockchain</h2>
+          <h2>{data.contractJSON?.name}</h2>
           <h3>{data.contractJSON?.address}</h3>
         </div>
         <div>
