@@ -19,7 +19,6 @@ export const ContractProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [contractJSON, setContractJSON] = useState<any>(null)
   // const provider = new ethers.JsonRpcProvider('http://127.0.0.1:8545')
 
-  
   useEffect(() => {
     async function setup() {
       if (window.ethereum) {
@@ -30,7 +29,6 @@ export const ContractProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           if(!accounts.length) {
             await web3Provider.send("eth_requestAccounts", []);
           }
-
           const signer = web3Provider.getSigner();
           console.log(signer);
   
@@ -43,6 +41,7 @@ export const ContractProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           // extendedContractData.name = name;
           // extendedContractData.symbol = symbol;
           // extendedContractData.totalSupply = totalSupply.toString();
+          
           setContractJSON(extendedContractData);
         }
         catch (error) {
@@ -53,10 +52,7 @@ export const ContractProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         alert("Please install MetaMask to use this app");
       }
     }
-
     setup();
-
-
   }, [contractData])
   return (
     contractJSON ?
