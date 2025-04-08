@@ -141,3 +141,12 @@ The token address provided will be unique, which you can now use to view your bl
 ```
 Example : 
 https://sepolia.etherscan.io/address/0x4705559cDC3c8deDc0438ED5f3F090C8043F6792
+
+### OH and sorry ###
+https://cloud.google.com/application/web3/faucet/ethereum/sepolia 
+After setting up a Sepolia Ethereum wallet with metamask, use above link to send some ethereum (no real value only for testnet) for gas fees ! 
+
+And there we go, at least we now have a small idea of what blockchain is ! 
+
+
+
