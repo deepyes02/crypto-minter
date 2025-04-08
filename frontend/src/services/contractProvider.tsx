@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import contractData from '../contract.json'
-// import { ethers } from 'ethers';
-import { Web3Provider } from '@ethersproject/providers';
+import {ethers, Contract, BrowserProvider} from 'ethers'
+
 
 // Symbol is added to the extended contract data
 interface ExtendedContractData {
@@ -17,30 +17,25 @@ const ContractContext = createContext<ContractContextType | undefined>(undefined
 
 export const ContractProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [contractJSON, setContractJSON] = useState<any>(null)
-  // const provider = new ethers.JsonRpcProvider('http://127.0.0.1:8545')
 
   useEffect(() => {
     async function setup() {
       if (window.ethereum) {
         try {
-          const web3Provider = new Web3Provider(window.ethereum);
+          const web3Provider = new BrowserProvider(window.ethereum);
+          const rpcProvider = new ethers.JsonRpcProvider('http://127.0.0.1:8545')
           const accounts = await web3Provider.listAccounts();
-          console.log(accounts);
+          // console.log(extendedContractData);
           if(!accounts.length) {
             await web3Provider.send("eth_requestAccounts", []);
           }
-          const signer = web3Provider.getSigner();
-          console.log(signer);
-  
-          // const contractAddress = extendedContractData.address;
-          // const contractABI = extendedContractData.abi;
-          // const name = await contract.name();
-          // const symbol = await contract.symbol();
-          // const totalSupply = await contract.totalSupply();
+          const signer = await web3Provider.getSigner();
+          const readContract = new Contract(extendedContractData.address, extendedContractData.abi, rpcProvider);
 
-          // extendedContractData.name = name;
-          // extendedContractData.symbol = symbol;
-          // extendedContractData.totalSupply = totalSupply.toString();
+
+          extendedContractData.name = await readContract.name();;
+          extendedContractData.symbol = await readContract.symbol();
+          extendedContractData.totalSupply = (await readContract.totalSupply()).toString();
           
           setContractJSON(extendedContractData);
         }
@@ -60,7 +55,11 @@ export const ContractProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         {children}
       </ContractContext.Provider>
       :
-      <h2>Sorry blockchain is not connected or smart contract not deployed, please check your code</h2>
+      <>
+      <a href="https://metamask.io/download/" target="_blank" rel="noopener noreferrer">Please install metamask</a>
+      <h2>
+      Sorry blockchain is not connected or smart contract not deployed, please check your code</h2>
+      </>
   )
 }
 //custom hook to use the contract context in any component
