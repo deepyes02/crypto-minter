@@ -1,7 +1,7 @@
 ## Building smart contracts; testing and interaction on the blockchain ##
 ### A learning by doing example ###
 
-**Don't use a live wallet address/ private key with real money for development purpose, of if you do, do not share your private keys on the internet**
+**Remember not to use a live wallet address/ private key for development purposes.** 
 
 From hardhat to testnet, this is real. 
 Example of a smart contract deployed to the Ethernet testnet at the end of this tutorial:
