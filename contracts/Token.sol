@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract Token {
     string public name = "VEDANTA";
-    string public version = "1.0";
+    string public version = "1.0-test";
     string public symbol = "SRI";
     // fixed amount of tokens stored i an unsigned integer type variable
     uint8 public decimals = 3;

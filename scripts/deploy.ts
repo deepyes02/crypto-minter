@@ -1,12 +1,19 @@
 import { ethers } from "hardhat";
 import fs from "fs";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+
+// For a simpler script, refer to deploy-testnet.ts which only has barebones before deploying the contract. This script is more complex and includes sending ETH to two MetaMask addresses after deploying the contract. The contract is deployed to the Sepolia testnet, and the addresses are specified in the .env file. The script also saves the contract address and ABI to a JSON file for use in a frontend application.
+// This script deploys a smart contract to the Sepolia testnet and sends 1 ETH to two specified MetaMask addresses. It also saves the contract address and ABI to a JSON file for use in a frontend application. Not sure how safe that is but we will see
 
 async function main() {
   // Deploy the contract
   const Token = await ethers.deployContract("Token");
   const [owner] = await ethers.getSigners();
-  const metaMaskAddress = "0x240c5D3960fFAB9ba9276F3A92C7178cD364c13d";
-  const metaMaskAddress2 = "0x7c6d752c62587b9303F8a2cff2CcbA3d233dE1e1";
+
+  const metaMaskAddress = process.env.METAMASK_ADDRESS_1 || "";
+  const metaMaskAddress2 = process.env.METAMASK_ADDRESS_2 || "";
 
   // Transfer 1 ETH (1000000000000000000 wei) from the owner to MetaMask address
   const tx = await owner.sendTransaction({
@@ -18,7 +25,7 @@ async function main() {
     value: ethers.parseEther("1.0"),  // Sending 1 ETH
   });
   
-  // Wait for the transaction to be mined
+
   await tx.wait(); await tx2.wait();
   console.log(`1 ETH has been sent to: ${metaMaskAddress}`);
   console.log(`1 ETH has been sent to: ${metaMaskAddress2}`);

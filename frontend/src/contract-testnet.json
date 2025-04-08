@@ -1,0 +1,16 @@
+{
+  "address": "0x4705559cDC3c8deDc0438ED5f3F090C8043F6792",
+  "abi": [
+    "constructor()",
+    "event Transfer(address indexed,address indexed,uint256)",
+    "function balanceOf(address) view returns (uint256)",
+    "function balances(address) view returns (uint256)",
+    "function decimals() view returns (uint8)",
+    "function name() view returns (string)",
+    "function owner() view returns (address)",
+    "function symbol() view returns (string)",
+    "function totalSupply() view returns (uint256)",
+    "function transfer(address,uint256)",
+    "function version() view returns (string)"
+  ]
+}
