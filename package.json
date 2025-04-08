@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "hardhat",
   "scripts": {
+    "frontend-dev" :"cd ./frontend && npm run dev",
+    "frontend-build" :"cd ./frontend && npm run build",
     "node": "hardhat node",
     "test": "hardhat test",
     "deploy": "hardhat run scripts/deploy.ts --network localhost"
