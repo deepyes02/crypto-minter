@@ -131,6 +131,11 @@ dotenv.config();
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     }
 ```
+### Make sure your wallet has some ether so that you can run the transactions for gas fee ###
+This is test ethereum which has no monetary value !! 
+https://cloud.google.com/application/web3/faucet/ethereum/sepolia 
+After setting up a Sepolia Ethereum wallet with metamask, use above link to send some ethereum (no real value only for testnet) for gas fees ! 
+
 
 ### Compile Solidity contract, and deploy ###
 ```sh
@@ -142,9 +147,7 @@ The token address provided will be unique, which you can now use to view your bl
 ### Here is the block address we published, which can be found via etherscan: ### 
 https://sepolia.etherscan.io/address/0x4705559cDC3c8deDc0438ED5f3F090C8043F6792
 
-### OH and sorry ###
-https://cloud.google.com/application/web3/faucet/ethereum/sepolia 
-After setting up a Sepolia Ethereum wallet with metamask, use above link to send some ethereum (no real value only for testnet) for gas fees ! 
+
 
 And there we go, at least we now have a small idea of what blockchain is ! 
 
