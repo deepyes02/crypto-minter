@@ -4,7 +4,7 @@
 **Remember not to use a live wallet address/ private key for development purposes.** 
 
 From hardhat to testnet, this is real. 
-Example of a smart contract deployed to the Ethernet testnet at the end of this tutorial:
+Example of a smart contract deployed to the Ethereum testnet at the end of this tutorial:
 
 
 ## How does it work ##
@@ -139,7 +139,7 @@ $ npx hardhat run scripts/deploy-testnet.ts --network sepolia
 Token deployed to: 0x4705559cDC3c8deDc0438ED5f3F090C8043F6792
 The token address provided will be unique, which you can now use to view your blockchain ledger
 ```
-Example : 
+### Here is the block address we published, which can be found via etherscan: ### 
 https://sepolia.etherscan.io/address/0x4705559cDC3c8deDc0438ED5f3F090C8043F6792
 
 ### OH and sorry ###
