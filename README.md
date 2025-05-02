@@ -1,7 +1,6 @@
 ## Building smart contracts; testing and interaction on the blockchain ##
-The woodcutter stood with stark eyes, looking upwards trying to make sense of the towering tree. Its trunk hard as shell. 
-Yet, to not get started meant going home empty handed, and that didn't sit right with him.
-So he started hacking !! 
+The woodcutter stood stark, glazing upwards at the grandiosity of the towering tree, then glanced at the miniscule axe on his shoulders.
+Not getting started meant not getting it done. So he started hacking ! 
 
 ### A learning by doing example ###
 
