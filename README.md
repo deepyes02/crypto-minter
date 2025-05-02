@@ -1,11 +1,12 @@
 ## Building smart contracts; testing and interaction on the blockchain ##
-### A learning by doing example ###
+The woodcutter stood with stark eyes, looking upwards trying to make sense of the towering tree. Its trunk hard as shell. 
+Yet, to not get started meant going home empty handed, and that didn't sit right with him.
+So he started hacking !! 
 
-**Remember not to use a live wallet address/ private key for development purposes.** 
+### A learning by doing example ###
 
 From hardhat to testnet, this is real. 
 Example of a smart contract deployed to the Ethereum testnet at the end of this tutorial:
-
 
 ## How does it work ##
 We use Solidity to write smart contracts that are compiled, and later can be interacted upon via Ether Javascript to run various operations like fetching information, moving balance and so on. 
@@ -18,7 +19,7 @@ We use Solidity to write smart contracts that are compiled, and later can be int
 
 It's a simple local dev environment for ethereum blockchain. 
 
-The code follows the original codebase but builds on it with testing
+
 
 ## See Token.sol for solidity code. ##
 After, run: 
