@@ -155,7 +155,7 @@ And there we go, at least we now have a small idea of what blockchain is !
 1. Building a better UI, and showing user related data like total coins !
 2. Further testing sending/receiving the cryptocurrency between accounts !
 
-After this, it could be forked and then customized as per your personal needs ! 
+That's it, the tree has shaken ! 
 
 
 
